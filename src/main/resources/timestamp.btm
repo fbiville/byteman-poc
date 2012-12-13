@@ -1,0 +1,10 @@
+RULE trace main exit
+CLASS DummyLogger
+METHOD log
+AT INVOKE PrintStream.println
+BIND timestamp = new java.util.Date()
+IF true
+    DO
+        System.out.print(timestamp);
+        System.out.print(" ");
+ENDRULE
